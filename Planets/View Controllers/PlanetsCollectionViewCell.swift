@@ -35,6 +35,7 @@ class PlanetsCollectionViewCell: UICollectionViewCell {
         guard let planetView = planetImageView else { return }
         guard let superView = internalView else { return }
         
+        planetView.contentMode = .scaleAspectFit
         
         let viewLeadingConstraint = NSLayoutConstraint(item: planetView, attribute: .leading, relatedBy: .equal, toItem: superView, attribute: .leading, multiplier: 1, constant: 8)
         
@@ -49,7 +50,7 @@ class PlanetsCollectionViewCell: UICollectionViewCell {
     
     func setUpLabelConstraints() {
         guard let imageLabel = planetNameLabel else { return }
-        
+        imageLabel.textAlignment = .center
         imageLabel.translatesAutoresizingMaskIntoConstraints = false
         
         let labelLeadingConstraint = NSLayoutConstraint(item: imageLabel, attribute: .leading, relatedBy: .equal, toItem: internalView, attribute: .leading, multiplier: 1, constant: 20)
